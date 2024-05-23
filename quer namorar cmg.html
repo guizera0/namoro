@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Para Dona Laiza</title>
+    <style>
+        body {
+            background-color: #491649;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+            color: white ;
+        }
+
+        h1 {
+            color: #ff3366;
+        }
+
+        .heart {
+            color: pink;
+            font-size: 50px;
+            color: #ff3366;
+        
+            border-radius: 15px;
+        }
+
+        #nao {
+            font-size: 24px;
+            color: #ff0000;
+            background-color: #ffffff;
+            border: none;
+        
+            position: absolute;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Um Pedido de Namoro Especial</h1>
+        <p>Olá amor ❤️,</p>
+        <p>Quero dizer que você ilumina minha vida como ninguém mais.</p>
+        <p>Queria te fazer uma pergunta sincera aqui...</p><br> 
+        <p><button class="heart" onclick="mostrarResposta()">❤️</button></p>
+        <button id="nao" onmouseover="mudarPosicao()">Não</button>
+        <p id="resposta" style="display: none;"></p>
+    </div>
+
+
+
+
+
+    <script>
+
+function mostrarResposta() {
+            document.getElementById('resposta').style.display = 'block';
+            document.getElementById('resposta').innerHTML = 'Sim! Eu aceito, meu amor. ❤️';
+        }
+
+        const button = document.getElementById('nao');
+
+function mudarPosicao() {
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const buttonWidth = button.offsetWidth;
+    const buttonHeight = button.offsetHeight;
+
+    const randomX = Math.floor(Math.random() * (viewportWidth - buttonWidth));
+    const randomY = Math.floor(Math.random() * (viewportHeight - buttonHeight));
+
+    button.style.left = `${randomX}px`;
+    button.style.top = `${randomY}px`;
+}
+
+button.addEventListener('click', moveButton);
+
+// Ensure the button is placed correctly on initial load
+window.addEventListener('load', moveButton);
+// Adjust the button's position on window resize (e.g., when device orientation changes)
+window.addEventListener('resize', moveButton);
+
+         </script>
+
+</body>
+</html>
+
+
+
+
+    
